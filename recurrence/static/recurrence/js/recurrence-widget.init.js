@@ -28,7 +28,9 @@ function initRecurrenceWidget($field) {
     MutationObserver
  */
 const callback = function (mutationsList, observer) {
-	for (const mutation of mutationsList) {
+    var mutation;
+	for (var i=0; i < mutationsList.length; i++) {
+        mutation = mutationsList[i];
 		if (mutation.type === 'childList') {
 			// Check if nodes were added
 			const addedNodes = mutation.addedNodes;
